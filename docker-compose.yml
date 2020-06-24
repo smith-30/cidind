@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  service-a:
+    build:
+      context: .
+      dockerfile: a/Dockerfile
+    #-----remote_debug_settings-------
+    privileged: true
+    ports:
+      - "8011:8011"
+    restart: always
+  service-b:
+    build:
+      context: .
+      dockerfile: b/Dockerfile
+    #-----remote_debug_settings-------
+    privileged: true
+    ports:
+      - "8022:8022"
+    restart: always
+  service-c:
+    build:
+      context: .
+      dockerfile: c/Dockerfile
+    #-----remote_debug_settings-------
+    privileged: true
