@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  dind:
+    build:
+      context: .
+    privileged: true
+    volumes:
+      - ./:/go/src/github.com/smith-30/cidind
