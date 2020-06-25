@@ -20,7 +20,7 @@ services:
     ports:
       - "8022:8022"
     restart: always
-    
+
   service-c:
     build:
       context: .
@@ -31,7 +31,7 @@ services:
     image: bitnami/mysql:5.7.25
     hostname: mysql
     ports:
-      - "13306:3306"
+      - "3306:3306"
     privileged: true
     environment:
       MYSQL_ROOT_PASSWORD: "MYSQL_ADMIN"
