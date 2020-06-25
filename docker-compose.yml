@@ -6,8 +6,6 @@ services:
       context: .
       dockerfile: a/Dockerfile
     privileged: true
-    links:
-      - mysql
     ports:
       - "8011:8011"
     restart: always
