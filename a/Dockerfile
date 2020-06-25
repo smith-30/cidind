@@ -2,15 +2,13 @@ FROM golang:latest
 
 LABEL maintainer="smith-30"
 
-WORKDIR /app
+WORKDIR /go/src/github.com/smith-30/cidind
 
 # Copy the source from the current directory to the Working Directory inside the container
 COPY . .
 
-WORKDIR /app/a
-
 # Build the Go app
-RUN go build -o main .
+RUN go build -o main ./a
 
 # Expose port 8080 to the outside world
 EXPOSE 8011

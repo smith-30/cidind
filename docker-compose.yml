@@ -5,23 +5,35 @@ services:
     build:
       context: .
       dockerfile: a/Dockerfile
-    #-----remote_debug_settings-------
     privileged: true
+    links:
+      - mysql
     ports:
       - "8011:8011"
     restart: always
+
   service-b:
     build:
       context: .
       dockerfile: b/Dockerfile
-    #-----remote_debug_settings-------
     privileged: true
     ports:
       - "8022:8022"
     restart: always
+    
   service-c:
     build:
       context: .
       dockerfile: c/Dockerfile
-    #-----remote_debug_settings-------
     privileged: true
+
+  mysql:
+    image: bitnami/mysql:5.7.25
+    hostname: mysql
+    ports:
+      - "13306:3306"
+    privileged: true
+    environment:
+      MYSQL_ROOT_PASSWORD: "MYSQL_ADMIN"
+      MYSQL_DATABASE: "testdb"
+      BITNAMI_DEBUG: "true"
