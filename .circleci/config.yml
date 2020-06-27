@@ -14,6 +14,7 @@ jobs:
       - run: docker-compose logs mysql
       - run: curl http://localhost:8022
       - run: docker-compose run service-c
+      - run: docker-compose logs service-b
 
 workflows:
   version: 2
