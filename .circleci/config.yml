@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/buildpack-deps:stable-dind
+      - image: circleci/buildpack-deps:jessie
       # - image: circleci/mysql:5.7.21
       #   environment:
       #     MYSQL_DATABASE: testdb
