@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - run: docker-compose -f _docker-compose.yml up -d
-      - run: docker-compose -f _docker-compose.yml exec dind docker-compose up -d
-      - run: docker-compose -f _docker-compose.yml exec dind docker-compose logs service-a
-      - run: docker-compose -f _docker-compose.yml exec dind docker-compose run service-c
-      - run: docker-compose -f _docker-compose.yml exec dind docker-compose logs service-b
+      - run: docker-compose -f _docker-compose.yml exec -T dind docker-compose up -d
+      - run: docker-compose -f _docker-compose.yml exec -T dind docker-compose logs service-a
+      - run: docker-compose -f _docker-compose.yml exec -T dind docker-compose run service-c
+      - run: docker-compose -f _docker-compose.yml exec -T dind docker-compose logs service-b
