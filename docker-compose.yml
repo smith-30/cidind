@@ -36,3 +36,5 @@ services:
       MYSQL_ROOT_PASSWORD: "MYSQL_ADMIN"
       MYSQL_DATABASE: "testdb"
       BITNAMI_DEBUG: "true"
+    volumes:
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
