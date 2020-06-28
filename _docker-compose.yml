@@ -4,6 +4,8 @@ services:
   dind:
     build:
       context: .
+      dockerfile: Dockerfile.jessie
     privileged: true
-    volumes:
-      - ./:/go/src/github.com/smith-30/cidind
+    tty: true
+    # environment:
+    #   DOCKER_TLS_CERTDIR: ""

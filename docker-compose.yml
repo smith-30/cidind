@@ -9,6 +9,8 @@ services:
     ports:
       - "8011:8011"
     restart: always
+    depends_on:
+      - mysql
 
   service-b:
     build:
