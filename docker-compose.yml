@@ -1,5 +1,12 @@
 version: "3.7"
 
+networks:
+  back:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.0.0/16
+
 services:
   service-a:
     build:
@@ -11,6 +18,8 @@ services:
     restart: always
     depends_on:
       - mysql
+    networks:
+      - back
 
   service-b:
     build:
@@ -20,12 +29,16 @@ services:
     ports:
       - "8022:8022"
     restart: always
+    networks:
+      - back
 
   service-c:
     build:
       context: .
       dockerfile: c/Dockerfile
     privileged: true
+    networks:
+      - back
 
   mysql:
     image: mysql:5.7
@@ -38,3 +51,5 @@ services:
       BITNAMI_DEBUG: "true"
     volumes:
       - ./mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - back
