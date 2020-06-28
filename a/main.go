@@ -16,6 +16,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	fmt.Printf("%#v\n", "ok")
 	http.HandleFunc("/", handler) // ハンドラを登録してウェブページを表示させる
 	http.ListenAndServe("0.0.0.0:8011", nil)
 }
