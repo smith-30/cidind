@@ -2,6 +2,11 @@ version: 2.1
 
 jobs:
   build:
+    docker:
+      - image: circleci/mysql:5.7.21
+        environment:
+          MYSQL_DATABASE: testdb
+          MYSQL_ROOT_PASSWORD: MYSQL_ADMIN
     machine:
       image: circleci/classic:edge
     steps:
