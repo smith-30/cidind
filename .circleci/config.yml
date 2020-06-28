@@ -20,12 +20,12 @@ jobs:
       - run: docker-compose -f _docker-compose.yml exec dind docker-compose logs service-a
       - run: docker-compose -f _docker-compose.yml exec dind docker-compose run service-c
       - run: docker-compose -f _docker-compose.yml exec dind docker-compose logs service-b
-      # - run: docker-compose up -d
-      # - run: docker-compose logs service-a
-      # - run: docker-compose logs mysql
-      # - run: curl http://localhost:8022
-      # - run: docker-compose run service-c
-      # - run: docker-compose logs service-b
+      - run: docker-compose up -d
+      - run: docker-compose logs service-a
+      - run: docker-compose logs mysql
+      - run: curl http://localhost:8022
+      - run: docker-compose run service-c
+      - run: docker-compose logs service-b
 
 workflows:
   version: 2

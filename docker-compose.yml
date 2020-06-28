@@ -35,6 +35,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "MYSQL_ADMIN"
       MYSQL_DATABASE: "testdb"
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test_passQ
       BITNAMI_DEBUG: "true"
     volumes:
       - ./mysql/my.cnf:/etc/mysql/my.cnf
