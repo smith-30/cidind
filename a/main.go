@@ -12,7 +12,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	_, err := rdb.Mysql("root", "MYSQL_ADMIN", "mysql", "3306", "testdb", true)
+	_, err := rdb.Mysql("test", "test_passQ", "mysql", "3306", "testdb", true)
 	if err != nil {
 		panic(err)
 	}
